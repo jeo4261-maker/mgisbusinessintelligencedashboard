@@ -1318,9 +1318,8 @@
             <h3>Transcript</h3>
       `;
 
-      // Add transcript entries (limit to first few to avoid overwhelming)
-      const entriesToShow = data.transcript_split.slice(0, 10); // Show first 10 entries
-      entriesToShow.forEach(entry => {
+      // Add all transcript entries
+      data.transcript_split.forEach(entry => {
         if (entry.text && entry.text !== '...') {
           html += `
             <div class="transcript-entry">
@@ -1333,14 +1332,6 @@
           `;
         }
       });
-
-      if (data.transcript_split.length > 10) {
-        html += `
-          <div style="text-align: center; padding: 20px; color: var(--text-secondary);">
-            <p>Showing first 10 of ${data.transcript_split.length} transcript entries</p>
-          </div>
-        `;
-      }
 
       html += `
           </div>
