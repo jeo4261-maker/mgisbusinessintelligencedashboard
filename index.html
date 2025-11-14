@@ -97,6 +97,56 @@
     }
 
     /* ===========================
+       Tab Navigation
+       =========================== */
+    .tab-navigation {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 32px;
+      border-bottom: 2px solid var(--border-color);
+      padding: 0 20px;
+    }
+
+    .tab-button {
+      background: transparent;
+      color: var(--text-secondary);
+      border: none;
+      padding: 16px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      box-shadow: none;
+    }
+
+    .tab-button:hover {
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--text-primary);
+      transform: none;
+    }
+
+    .tab-button.active {
+      color: var(--accent-blue);
+      border-bottom-color: var(--accent-blue);
+      background: rgba(59, 130, 246, 0.05);
+    }
+
+    .tab-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ===========================
        Control Panel
        =========================== */
     .controls {
@@ -271,6 +321,145 @@
       font-weight: 600;
     }
 
+    /* ===========================
+       Transcript Styles
+       =========================== */
+    .transcript-container {
+      max-width: 100%;
+    }
+
+    .transcript-header {
+      background: var(--secondary-bg);
+      padding: 24px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .transcript-header h2 {
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .transcript-meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .meta-value {
+      font-size: 1rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .participants-section {
+      background: var(--secondary-bg);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+
+    .participants-section h3 {
+      font-size: 1.125rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .participants-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .participant-badge {
+      background: rgba(59, 130, 246, 0.2);
+      color: var(--accent-blue);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .transcript-section {
+      background: var(--secondary-bg);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .transcript-section h3 {
+      font-size: 1.125rem;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .transcript-entry {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--accent-blue);
+    }
+
+    .transcript-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .transcript-speaker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .speaker-name {
+      font-weight: 600;
+      color: var(--accent-blue);
+      font-size: 1rem;
+    }
+
+    .speaker-role {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    .transcript-text {
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-size: 0.9375rem;
+    }
+
+    .json-viewer {
+      background: var(--primary-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 16px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
     .indicator-high {
       background: var(--success-bg);
       color: var(--success-green);
@@ -408,6 +597,16 @@
         font-size: 1rem;
       }
 
+      .tab-navigation {
+        padding: 0 12px;
+        gap: 4px;
+      }
+
+      .tab-button {
+        padding: 12px 16px;
+        font-size: 0.9375rem;
+      }
+
       .card {
         padding: 20px;
       }
@@ -437,6 +636,27 @@
       .price {
         font-size: 1rem;
       }
+
+      .transcript-header {
+        padding: 16px;
+      }
+
+      .transcript-header h2 {
+        font-size: 1.25rem;
+      }
+
+      .transcript-meta {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .participants-section,
+      .transcript-section {
+        padding: 16px;
+      }
+
+      .transcript-entry {
+        padding: 12px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -453,6 +673,17 @@
         font-size: 1.5rem;
       }
 
+      .tab-navigation {
+        padding: 0 8px;
+        gap: 4px;
+      }
+
+      .tab-button {
+        padding: 10px 12px;
+        font-size: 0.875rem;
+        flex: 1;
+      }
+
       .card {
         padding: 16px;
       }
@@ -465,6 +696,18 @@
 
       table {
         min-width: 600px;
+      }
+
+      .transcript-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .transcript-header {
+        padding: 12px;
+      }
+
+      .transcript-header h2 {
+        font-size: 1.125rem;
       }
     }
 
@@ -521,6 +764,16 @@
       <p>Technology Sector Stock Analysis</p>
     </header>
 
+    <!-- Tab Navigation -->
+    <nav class="tab-navigation" role="tablist" aria-label="Dashboard sections">
+      <button class="tab-button active" role="tab" aria-selected="true" aria-controls="stocks-tab" id="stocks-tab-btn" onclick="switchTab('stocks')">
+        Stock Analysis
+      </button>
+      <button class="tab-button" role="tab" aria-selected="false" aria-controls="transcript-tab" id="transcript-tab-btn" onclick="switchTab('transcript')">
+        Earnings Transcript
+      </button>
+    </nav>
+
     <!-- Control Panel -->
     <div class="controls" role="toolbar" aria-label="Dashboard controls">
       <div class="timestamp" id="timestamp" aria-live="polite">
@@ -540,11 +793,24 @@
 
     <!-- Main Content Card -->
     <main class="card" role="main">
-      <div id="content">
-        <!-- Initial loading state -->
-        <div class="loading" role="status" aria-live="polite">
-          <div class="loading-spinner" aria-hidden="true"></div>
-          <p class="loading-text">Fetching latest data...</p>
+      <!-- Stocks Tab Content -->
+      <div id="stocks-tab" class="tab-content active" role="tabpanel" aria-labelledby="stocks-tab-btn">
+        <div id="content">
+          <!-- Initial loading state -->
+          <div class="loading" role="status" aria-live="polite">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p class="loading-text">Fetching latest data...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transcript Tab Content -->
+      <div id="transcript-tab" class="tab-content" role="tabpanel" aria-labelledby="transcript-tab-btn">
+        <div id="transcript-content">
+          <div class="loading" role="status" aria-live="polite">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p class="loading-text">Loading transcript data...</p>
+          </div>
         </div>
       </div>
     </main>
@@ -559,6 +825,59 @@
 
     // Store the latest stock data globally for export functionality
     let currentStockData = [];
+
+    // Store transcript data
+    let transcriptData = null;
+
+    // Track current active tab
+    let currentTab = 'stocks';
+
+    /**
+     * ======================================
+     * TAB SWITCHING FUNCTIONALITY
+     * ======================================
+     */
+
+    /**
+     * Switches between tabs (stocks and transcript)
+     * @param {string} tabName - Name of the tab to switch to ('stocks' or 'transcript')
+     */
+    function switchTab(tabName) {
+      // Update current tab
+      currentTab = tabName;
+
+      // Get all tabs and buttons
+      const stocksTab = document.getElementById('stocks-tab');
+      const transcriptTab = document.getElementById('transcript-tab');
+      const stocksBtn = document.getElementById('stocks-tab-btn');
+      const transcriptBtn = document.getElementById('transcript-tab-btn');
+
+      // Hide all tabs
+      stocksTab.classList.remove('active');
+      transcriptTab.classList.remove('active');
+
+      // Deactivate all buttons
+      stocksBtn.classList.remove('active');
+      transcriptBtn.classList.remove('active');
+      stocksBtn.setAttribute('aria-selected', 'false');
+      transcriptBtn.setAttribute('aria-selected', 'false');
+
+      // Show selected tab
+      if (tabName === 'stocks') {
+        stocksTab.classList.add('active');
+        stocksBtn.classList.add('active');
+        stocksBtn.setAttribute('aria-selected', 'true');
+      } else if (tabName === 'transcript') {
+        transcriptTab.classList.add('active');
+        transcriptBtn.classList.add('active');
+        transcriptBtn.setAttribute('aria-selected', 'true');
+
+        // Load transcript data if not already loaded
+        if (!transcriptData) {
+          loadTranscriptData();
+        }
+      }
+    }
 
     /**
      * ======================================
@@ -812,6 +1131,215 @@
         link.click();
         document.body.removeChild(link);
       }
+    }
+
+    /**
+     * ======================================
+     * TRANSCRIPT DATA FUNCTIONS
+     * ======================================
+     */
+
+    /**
+     * Loads and displays transcript data from embedded JSON
+     */
+    function loadTranscriptData() {
+      const transcriptContentDiv = document.getElementById('transcript-content');
+
+      try {
+        // Embedded transcript data
+        const data = {
+          "date": "2024-01-30",
+          "timestamp": 1706653800,
+          "ticker": "MSFT",
+          "cik": "789019",
+          "year": "2024",
+          "quarter": "2",
+          "earnings_timing": "after_market",
+          "transcript": "Operator: Greetings, and welcome to the Microsoft Fiscal Year 2024 Second Quarter Earnings Conference Call. At this time, all participants are in a listen-only mode. A question-and-answer session will follow the formal presentation. [Operator Instructions] As a reminder, this conference is being recorded. I would now like to turn the conference over to your host, Brett Iversen, Vice President of Investor Relations. Please go ahead.\nBrett Iversen: Good afternoon, and thank you for joining us today. On the call with me are Satya Nadella, Chairman and Chief Executive Officer; Amy Hood, Chief Financial Officer; Alice Jolla, Chief Accounting Officer; and Keith Dolliver, Corporate Secretary and Deputy General Counsel. On the Microsoft Investor Relations website, you can find our earnings press release and financial summary slide deck, which is intended to supplement our prepared remarks during today's call, and provides the reconciliation of differences between GAAP and non-GAAP financial measures...",
+          "participants": [
+            {
+              "name": "Operator",
+              "role": "Operator",
+              "company": "Microsoft"
+            },
+            {
+              "name": "Brett Iversen",
+              "role": "Investor Relations",
+              "company": "Microsoft"
+            },
+            {
+              "name": "Satya Nadella",
+              "role": "Chairman and Chief Executive Officer",
+              "company": "Microsoft"
+            },
+            {
+              "name": "Amy Hood",
+              "role": "Chief Financial Officer",
+              "company": "Microsoft"
+            },
+            {
+              "name": "Mark Moerdler",
+              "role": "Analyst",
+              "company": "Bernstein Research"
+            }
+          ],
+          "transcript_split": [
+            {
+              "company": "Microsoft",
+              "role": "Operator",
+              "text": "Greetings, and welcome to the Microsoft Fiscal Year 2024 Second Quarter Earnings Conference Call. At this time, all participants are in a listen-only mode. A question-and-answer session will follow the formal presentation. [Operator Instructions] As a reminder, this conference is being recorded. I would now like to turn the conference over to your host, Brett Iversen, Vice President of Investor Relations. Please go ahead.",
+              "speaker": "Operator"
+            },
+            {
+              "company": "Microsoft",
+              "role": "Investor Relations",
+              "text": "Good afternoon, and thank you for joining us today. On the call with me are Satya Nadella, Chairman and Chief Executive Officer; Amy Hood, Chief Financial Officer; Alice Jolla, Chief Accounting Officer; and Keith Dolliver, Corporate Secretary and Deputy General Counsel. On the Microsoft Investor Relations website, you can find our earnings press release and financial summary slide deck, which is intended to supplement our prepared remarks during today's call, and provides the reconciliation of differences between GAAP and non-GAAP financial measures. More detailed outlook slides will be available on the Microsoft Investor Relations website, when we provide outlook commentary on today's call. Microsoft, completed the acquisition of Activision Blizzard this quarter and we are reporting its results in our More Personal Computing segment, beginning on October 13, 2023. Accordingly, our Xbox content and services revenue growth investor metric includes the net impact of Activision. Additionally, our press release and slide deck contains supplemental information regarding the net impact of the Activision acquisition on our financial results. On this call, ...",
+              "speaker": "Brett Iversen"
+            },
+            {
+              "company": "Microsoft",
+              "role": "Chairman and Chief Executive Officer",
+              "text": "Thank you, Brett. It was a record quarter driven by the continued strength of Microsoft Cloud, which surpassed $33 billion in revenue, up 24%. We've moved from talking about AI to applying AI at scale by infusing AI across every layer of our tech stack, we are winning new customers and helping drive new benefits and productivity gains. Now I'll highlight examples of our momentum and progress starting with Azure. Azure again took share this quarter with our AI advantage. Azure offers the top performance for AI training and inference in the most diverse selection of AI accelerators, including the latest from AMD and NVIDIA, as well as our own first-party silicon Azure Maia. And with Azure AI, we provide access to the best selection of foundation and open-source models, including both LLM and SLMs, all integrated deeply with infrastructure, data, and tools on Azure. We now have 53,000 Azure AI customers, over one-third are new to Azure over the past 12 months. Our new models of service offering makes it easy for developers to use LLM's from our partners like Cohere, Meta, and Mistral on Azure, without having to manage underlying infrastructure. We have also built the world's most popular SLMs, which offer performance comparable to larger models, but are small enough to run on a laptop or mobile device. Anker, Ashley, AT&T, EY, and Thomson Reuters, for example, are all already exploring how to use our SLM-5 for their applications. And we have great momentum with Azure OpenAI Service. This quarter we added support for OpenAI's latest models including GPT-4 Turbo, GPT-4 with Vision, DALL-E 3 as well as fine-tuning. We are seeing increased usage from AI-first start-ups like Moveworks, Perplexity, SymphonyAI, as well as some of the world's largest companies. Over half of the Fortune 500 use Azure OpenAI today including Ally Financial, Coca-Cola, and Rockwell Automation...",
+              "speaker": "Satya Nadella"
+            },
+            {
+              "company": "Microsoft",
+              "role": "Chief Financial Officer",
+              "text": "Thank you, Satya, and good afternoon, everyone. This quarter, revenue was $62 billion, up 18% and 16% in constant currency. When adjusted for the prior year's Q2 charge, operating income increased 25% and 23% in constant currency, and earnings per share was $2.93, which increased 26% and 23% in constant currency. Results exceeded expectations and we delivered another quarter of double-digit top and bottom-line growth. Strong execution by our sales teams and partners drove share gains again this quarter across many of our businesses, as Satya referenced. In our commercial business, strong demand for our Microsoft cloud offerings, including AI services drove better-than-expected growth and large long-term Azure contracts. Microsoft 365 suite strength contributed to ARPU expansion for our office commercial business, while new business growth continued to be moderated for standalone products sold outside the Microsoft 365 suite. Commercial bookings were ahead of expectations and increased 17% and 9% in constant currency on a low expiry base. The strength in long-term Azure contracts mentioned earlier, along with strong execution across our core annuity sales motions, including healthy renewals drove our results. Commercial remaining performance obligation increased 17% and 16% in constant currency to $222 billion, roughly 45% will be recognized in revenue in the next 12 months, up 15% year-over-year...",
+              "speaker": "Amy Hood"
+            }
+          ]
+        };
+
+        // Store the data globally
+        transcriptData = data;
+
+        // Display the transcript
+        displayTranscriptData(data);
+
+      } catch (error) {
+        console.error('Error loading transcript data:', error);
+        displayTranscriptError(error.message);
+      }
+    }
+
+    /**
+     * Displays formatted transcript data
+     * @param {Object} data - Transcript data object
+     */
+    function displayTranscriptData(data) {
+      const transcriptContentDiv = document.getElementById('transcript-content');
+
+      // Format date
+      const date = new Date(data.timestamp * 1000);
+      const formattedDate = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      // Build HTML
+      let html = `
+        <div class="transcript-container data-container">
+          <!-- Header Section -->
+          <div class="transcript-header">
+            <h2>Earnings Call Transcript</h2>
+            <div class="transcript-meta">
+              <div class="meta-item">
+                <span class="meta-label">Company</span>
+                <span class="meta-value">${escapeHtml(data.ticker)}</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Date</span>
+                <span class="meta-value">${formattedDate}</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Quarter</span>
+                <span class="meta-value">Q${data.quarter} ${data.year}</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Timing</span>
+                <span class="meta-value">${data.earnings_timing.replace('_', ' ')}</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">CIK</span>
+                <span class="meta-value">${data.cik}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Participants Section -->
+          <div class="participants-section">
+            <h3>Participants</h3>
+            <div class="participants-list">
+      `;
+
+      // Add participants (filter out "..." entries)
+      data.participants.forEach(participant => {
+        if (typeof participant === 'object' && participant.name && participant.name !== '...') {
+          html += `
+            <div class="participant-badge">
+              ${escapeHtml(participant.name)} - ${escapeHtml(participant.role)}
+            </div>
+          `;
+        }
+      });
+
+      html += `
+            </div>
+          </div>
+
+          <!-- Transcript Section -->
+          <div class="transcript-section">
+            <h3>Transcript</h3>
+      `;
+
+      // Add transcript entries (limit to first few to avoid overwhelming)
+      const entriesToShow = data.transcript_split.slice(0, 10); // Show first 10 entries
+      entriesToShow.forEach(entry => {
+        if (entry.text && entry.text !== '...') {
+          html += `
+            <div class="transcript-entry">
+              <div class="transcript-speaker">
+                <span class="speaker-name">${escapeHtml(entry.speaker)}</span>
+                <span class="speaker-role">${escapeHtml(entry.role)}</span>
+              </div>
+              <div class="transcript-text">${escapeHtml(entry.text)}</div>
+            </div>
+          `;
+        }
+      });
+
+      if (data.transcript_split.length > 10) {
+        html += `
+          <div style="text-align: center; padding: 20px; color: var(--text-secondary);">
+            <p>Showing first 10 of ${data.transcript_split.length} transcript entries</p>
+          </div>
+        `;
+      }
+
+      html += `
+          </div>
+        </div>
+      `;
+
+      transcriptContentDiv.innerHTML = html;
+    }
+
+    /**
+     * Displays an error message for transcript loading
+     * @param {string} message - Error message to display
+     */
+    function displayTranscriptError(message) {
+      const transcriptContentDiv = document.getElementById('transcript-content');
+      transcriptContentDiv.innerHTML = `
+        <div class="error" role="alert">
+          <div class="error-icon" aria-hidden="true">⚠️</div>
+          <h2 class="error-title">Unable to Load Transcript</h2>
+          <p class="error-message">${escapeHtml(message)}</p>
+          <button onclick="loadTranscriptData()">Try Again</button>
+        </div>
+      `;
     }
 
     /**
